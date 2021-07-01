@@ -1,0 +1,11 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+{% comment %} <h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1> {% endcomment %}
+{% comment %} 本当はオーバライドをしなくてもdjango.contrib.admin.AdminSite.site_header属性を使えば簡単に変更できる． {% endcomment %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Polls Administration</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
